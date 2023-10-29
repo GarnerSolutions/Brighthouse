@@ -1,12 +1,17 @@
+import { JSDOM } from 'jsdom';
 import fetch from 'node-fetch';
 
+// Create a DOM environment using jsdom
+const { window } = new JSDOM();
+const $ = require('jquery')(window);
 
 const API_URL = 'https://brighthousesolar.fieldroutes.com/api';
 const API_KEY = '2l6dhlhl6tltpfu98dpvb6770a0mrro8i1tcctk66ksurks44ceohif28o30um17';
 const API_TOKEN = '8ebgdsgiihnutdglcponabcvadj5166nmob6m8g2gnene3v0eqvb8q2385ouedcu';
+
 let salesRepNames = {};
 
-async function fetchEmployeeName(employeeID) {
+async function fetchsetterName(employeeID) {
     const headers = {
         'Authorization': `Bearer ${API_KEY}:${API_TOKEN}`
     };
@@ -27,9 +32,9 @@ async function fetchEmployeeName(employeeID) {
     }
 }
 
-fetchEmployeeName('10004')
-    .then(employeeName => {
-        console.log("Employee name:", employeeName);
+fetchsetterName('10004')
+    .then(setterName => {
+        console.log("Employee name:", setterName);
     })
     .catch(err => {
         console.error("Error:", err);
