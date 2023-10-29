@@ -1,6 +1,5 @@
-// apiModule.js
-        $(function(){
-            window.apiModule = (function(){
+
+            export default (function(){
                 var base_url,keys, tokens, names, queryProfileToken;
                 //(PRAdmin) Add queryProfileToken to each call if set in localStorage
                 queryProfileToken=localStorage.queryProfileToken||false;
@@ -447,7 +446,7 @@
                 };
                 return m;
             })();
-        });
+
         var _nl = '\n';
         Array.prototype.unique = function(){
             return this.filter(function (value, index, self){

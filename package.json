@@ -1,5 +1,9 @@
 {
+  "type": "module",
   "dependencies": {
+    "..save": "link:..save",
+    "axios": "^1.6.0",
+    "googleapis": "^128.0.0",
     "jsdom": "^22.1.0",
     "node-fetch": "^3.3.2"
   }
