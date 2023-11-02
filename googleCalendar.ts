@@ -1,15 +1,15 @@
-
 import axios from 'axios';
 import { google } from "googleapis"
-import key from "./lucid-destiny-336014-d1f39c212058"
+import key from "./brighthouse-393023-f224c2e17667"
 
 // Set your Google Calendar API key.
 
 
-const calendarId = "rksvis@gmail.com"
 
 async function fetchGoogleCalendarEvents() {
     try {
+        // Set the calendar ID (usually 'primary' for the authenticated user's primary calendar).
+
 
         // Define the time range for events retrieval (optional).
         const timeMin = new Date().toISOString();
@@ -31,22 +31,20 @@ async function fetchGoogleCalendarEvents() {
             const calendar = google.calendar({ version: 'v3', auth: jwtClient });
 
 
-            const e = await calendar.events.list({
-                calendarId: calendarId,
-                timeMin: timeMin,
-                timeMax: timeMax
-            })
 
-            console.log(JSON.stringify(e.data))
+            //============================================================================================            
+            //============================================================================================            
+            //============================================================================================            
 
-            calendar.acl.insert({
-                requestBody: {
-                    role: ""
-                }
-            })
+            const calendarId = "tom@brighthouse.solar"
+
+
+            const r3 = await calendar.calendarList.list()
+
+            console.log(r3.data)
 
             const event = {
-                summary: 'Event Title',
+                summary: 'Test event from developer',
                 location: 'Event Location',
                 description: 'Event Description',
                 start: {
@@ -58,18 +56,19 @@ async function fetchGoogleCalendarEvents() {
                     timeZone: 'CET',
                 },
             };
-            // const k = await calendar.events.insert({
-            //     calendarId: calendarId,
-            //     requestBody: event
-            // })
 
-            // console.log(k)
+            const evRes = await calendar.events.insert({
+                calendarId,
+                requestBody: event
+            })
 
+            console.log(evRes.data)
+
+            //============================================================================================            
+            //============================================================================================            
+            //============================================================================================            
 
         });
-
-
-
 
 
     } catch (error) {
@@ -79,6 +78,3 @@ async function fetchGoogleCalendarEvents() {
 }
 
 fetchGoogleCalendarEvents();
-
-
-
