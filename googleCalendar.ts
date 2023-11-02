@@ -10,8 +10,6 @@ const calendarId = "c_768a71548c8ed8259d9ce0021bab571514e66bf65de45bfeee9612a553
 
 async function fetchGoogleCalendarEvents() {
     try {
-        // Set the calendar ID (usually 'primary' for the authenticated user's primary calendar).
-
 
         // Define the time range for events retrieval (optional).
         const timeMin = new Date().toISOString();

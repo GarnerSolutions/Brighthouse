@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  ..save: link:..save
   '@google-cloud/local-auth': 2.1.0
   axios: ^1.6.0
   googleapis: ^105.0.0
@@ -9,7 +8,6 @@ specifiers:
   node-fetch: ^3.3.2
 
 dependencies:
-  ..save: link:..save
   '@google-cloud/local-auth': 2.1.0
   axios: 1.6.0
   googleapis: 105.0.0
