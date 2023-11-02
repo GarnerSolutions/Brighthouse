@@ -6,7 +6,7 @@ import key from "./brighthouse-393023-f224c2e17667"
 // Set your Google Calendar API key.
 
 
-const calendarId = "jurij@brighthouse.solar"
+const calendarId = "c_768a71548c8ed8259d9ce0021bab571514e66bf65de45bfeee9612a553ced500@group.calendar.google.com"
 
 async function fetchGoogleCalendarEvents() {
     try {
@@ -54,14 +54,12 @@ async function fetchGoogleCalendarEvents() {
                     timeZone: 'CET',
                 },
             };
-            const k = await calendar.events.insert({
-                calendarId: calendarId,
-                requestBody: event
-            })
+            // const k = await calendar.events.insert({
+            //     calendarId: calendarId,
+            //     requestBody: event
+            // })
 
-            console.log(k)
-
-
+            // console.log(k)
 
 
         });
