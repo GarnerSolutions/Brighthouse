@@ -1,12 +1,12 @@
 
 import axios from 'axios';
 import { google } from "googleapis"
-import key from "./brighthouse-393023-f224c2e17667"
+import key from "./lucid-destiny-336014-d1f39c212058"
 
 // Set your Google Calendar API key.
 
 
-const calendarId = "c_768a71548c8ed8259d9ce0021bab571514e66bf65de45bfeee9612a553ced500@group.calendar.google.com"
+const calendarId = "rksvis@gmail.com"
 
 async function fetchGoogleCalendarEvents() {
     try {
@@ -37,7 +37,13 @@ async function fetchGoogleCalendarEvents() {
                 timeMax: timeMax
             })
 
-            console.log(e.data)
+            console.log(JSON.stringify(e.data))
+
+            calendar.acl.insert({
+                requestBody: {
+                    role: ""
+                }
+            })
 
             const event = {
                 summary: 'Event Title',

@@ -6,5 +6,8 @@
     "googleapis": "^105.0.0",
     "jsdom": "^22.1.0",
     "node-fetch": "^3.3.2"
+  },
+  "scripts": {
+    "start": "clear;tsc; cp ./dist/googleCalendar.js ./dist/googleCalendar.cjs; node ./dist/googleCalendar.cjs "
   }
 }
